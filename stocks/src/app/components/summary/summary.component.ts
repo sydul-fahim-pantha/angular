@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-summary',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
+  @Input() stock: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isPositive() {
+    console.log(this.stock);
+
+    return this.stock.change > 0;
+  }
+
+  isNegative() {
+    console.log(this.stock);
+
+    return this.stock.change < 0;
   }
 
 }

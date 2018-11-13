@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StocksService } from './sevices/stocks.service';
 
 
 @NgModule({
@@ -12,9 +14,10 @@ import { SummaryComponent } from './components/summary/summary.component';
     SummaryComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [StocksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
